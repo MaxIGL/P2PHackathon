@@ -1,3 +1,6 @@
+
+![](images/Titre.png)
+
 # PoliBridge
 ## A Cross-chain Bridge & Swapper
 
@@ -13,11 +16,9 @@ Starton provides an API-platform to connect any application to blockchains. Insi
 The aim of our dApp is to allow jFiat holders to seamlessly bridge and swap their tokens from one chain to another. 
 
 
-
-
-
 ## First Use Case: Stablecoin Bridge
 
+![](imagess/Use_Case_A.png)
 
 The Jarvis protocol emits a type of stablecoin (for example a jEuro) on several blockchains. 
 Step 1: In order for a user to bridge their jEuro stablecoin jEuro to another blockchain, they lock some in the blockchain A. 
@@ -25,16 +26,9 @@ Step 2:The Starton Watcher notifies and validates that deposit to the PoliBridge
 Step 3: On the backend, the PoliBridge app uses that validation to send an authorized transaction to smart-contract B.
 Step 4: With the authentication received by the transaction from the PoliBridge app, the Smart Contract B unlocks and sends the same amount of token x to the user in the blockchain B.
 
-
-
-
-
-
-
-
 ## Second Use Case: Cross-Chain Swapping
 
-
+![](imagess/Use_Case_B.png)
 
 If the user wants now to swap jEuro in blockchain A directly to another type of jFiat existing in Blockchain B, they will be able to do it. The process is the same as a simple bridge except there is an intermediate transaction between the SC B and the user, which consists of swapping the token x to the token y in calling an existing pool on blockchain B.
 
