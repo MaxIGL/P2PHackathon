@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { Contract } from "@ethersproject/contracts";
-import { shortenAddress, useCall, useEthers, useLookupAddress } from "@usedapp/core";
+import { shortenAddress, useCall, useEthers, useLookupAddress, useContractFunction } from "@usedapp/core";
 import React, { useEffect, useState } from "react";
 
 import { Body, Button, Container, Header, Image, Link } from "./components";
@@ -8,6 +8,12 @@ import logo from "./ethereumLogo.png";
 
 import { MAINNET_ID, addresses, abis } from "@compound-app/contracts";
 import GET_MONEY_MARKETS from "./graphql/subgraph";
+
+import { utils } from 'ethers'
+import BridgeAbi from './bridgeABI';
+import ERC20Abi from './ERC20ABI';
+
+import { FujiChain } from './chain/fuji'
 
 function WalletButton() {
   const [rendered, setRendered] = useState("");
@@ -47,26 +53,51 @@ function WalletButton() {
   );
 }
 
-function App() {
-  // Read more about useDapp on https://usedapp.io/
-  const { error: contractCallError, value: tokenBalance } =
-    useCall({
-       contract: new Contract(addresses[MAINNET_ID].tokens.cDAI, abis.tokens.cDAI),
-       method: "balanceOf",
-       args: ["0x3f8CB69d9c0ED01923F11c829BaE4D9a4CB6c82C"],
-    }) ?? {};
+function ApproveButton() {
 
-  const { loading, error: subgraphQueryError, data } = useQuery(GET_MONEY_MARKETS);
+
+  const { switchNetwork, chainId } = useEthers();
+  // if(chainId !== FujiChain.chainId) {
+    //await switchNetwork(FujiChain.chainId)
+  //}
+
+  const addressBridge = "0xf3557Fd50704E6B6D603713dE9132d9931957d8B"
+  const contractAddress = "0xfc7215c9498fc12b22bc0ed335871db4315f03d3"
+  const [rendered, setRendered] = useState("");
+
+  const { account, activateBrowserWallet, deactivate, error } = useEthers();
 
   useEffect(() => {
-    if (subgraphQueryError) {
-      console.error("Error while querying subgraph:", subgraphQueryError.message);
-      return;
+    
+  }, [account, setRendered]);
+
+
+  const ERC20Interface = new utils.Interface(ERC20Abi)
+  const ERC20ContractAddress = '0xA243FEB70BaCF6cD77431269e68135cf470051b4'
+  const contract = new Contract(ERC20ContractAddress, ERC20Interface)
+
+  useEffect(() => {
+    if (error) {
+      console.error("Error while connecting wallet:", error.message);
     }
-    if (!loading && data && data.markets) {
-      console.log({ markets: data.markets });
-    }
-  }, [loading, subgraphQueryError, data]);
+  }, [error]);
+
+  const { state, approve } = useContractFunction(contract, 'approve', { transactionName: 'Approve' })
+  const { status } = state
+
+  const approveBridge = () => {
+    void approve({ _spender: addressBridge, _value: 10 })
+  }
+
+  return (        
+  <div>
+      <button onClick={() => approveBridge()}>Bridge</button>
+      <p>Status: {status}</p>
+  </div>
+  )
+}
+
+function App() {
 
   return (
     <Container>
@@ -74,15 +105,7 @@ function App() {
         <WalletButton />
       </Header>
       <Body>
-        <Image src={logo} alt="ethereum-logo" />
-        <p>
-          Edit <code>packages/react-app/src/App.js</code> and save to reload.
-        </p>
-        <Link href="https://reactjs.org">
-          Learn React
-        </Link>
-        <Link href="https://usedapp.io/">Learn useDapp</Link>
-        <Link href="https://compound.finance/developers">Learn Compound</Link>
+        <ApproveButton />
       </Body>
     </Container>
   );
