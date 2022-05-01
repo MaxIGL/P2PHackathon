@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { Contract } from "@ethersproject/contracts";
-import { shortenAddress, useCall, useEthers, useLookupAddress, useContractFunction } from "@usedapp/core";
+import { shortenAddress, useCall, useEthers, useLookupAddress, useContractFunction, SUPPORTED_TEST_CHAINS } from "@usedapp/core";
 import React, { useEffect, useState } from "react";
 
 import { Body, Button, Container, Header, Image, Link } from "./components";
@@ -55,7 +55,6 @@ function WalletButton() {
 
 function ApproveButton() {
 
-
   const { switchNetwork, chainId } = useEthers();
   // if(chainId !== FujiChain.chainId) {
     //await switchNetwork(FujiChain.chainId)
@@ -71,7 +70,6 @@ function ApproveButton() {
     
   }, [account, setRendered]);
 
-
   const ERC20Interface = new utils.Interface(ERC20Abi)
   const ERC20ContractAddress = '0xA243FEB70BaCF6cD77431269e68135cf470051b4'
   const contract = new Contract(ERC20ContractAddress, ERC20Interface)
@@ -82,18 +80,24 @@ function ApproveButton() {
     }
   }, [error]);
 
-  const { state, approve } = useContractFunction(contract, 'approve', { transactionName: 'Approve' })
+  const { state, send:approve } = useContractFunction(contract, 'approve', { transactionName: 'Approve' })
   const { status } = state
 
-  const approveBridge = () => {
-    void approve({ _spender: addressBridge, _value: 10 })
+  const approveBridge = async() => {
+    await approve(addressBridge, utils.parseEther("10") )
+
+
   }
 
   return (        
-  <div>
-      <button onClick={() => approveBridge()}>Bridge</button>
-      <p>Status: {status}</p>
-  </div>
+    <Button
+      onClick={() => {
+        approveBridge()
+      }}
+    >
+      {rendered === "" && "Approve"}
+      {rendered !== "" && rendered}
+    </Button>
   )
 }
 

@@ -17,11 +17,11 @@ let ABI = [
         "constant": false,
         "inputs": [
             {
-                "name": "_spender",
+                "name": "spender",
                 "type": "address"
             },
             {
-                "name": "_value",
+                "name": "value",
                 "type": "uint256"
             }
         ],

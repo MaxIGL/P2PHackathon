@@ -13,11 +13,11 @@ import App from "./App";
 const INFURA_PROJECT_ID = "defba93b47f748f09fcead8282b9e58e";
 const config: Config = {
   readOnlyChainId: FujiChain.chainId,
-  readOnlyUrls: {
-    [Mainnet.chainId]: 'https://mainnet.infura.io/v3/62687d1a985d4508b2b7a24827551934',
-    [FujiChain.chainId]: 'https://api.avax-test.network/ext/bc/C/rpc',
-  },
-  networks: [...DEFAULT_SUPPORTED_CHAINS, FujiChain],
+  //readOnlyUrls: {
+    //[Mainnet.chainId]: 'https://mainnet.infura.io/v3/62687d1a985d4508b2b7a24827551934',
+    //[FujiChain.chainId]: 'https://api.avax-test.network/ext/bc/C/rpc',
+  //},
+  networks: [FujiChain],
 }
 
 // This is the official Compound subgraph. You can replace it with your own, if you need to.
