@@ -18,7 +18,7 @@ The aim of our dApp is to allow jFiat holders to seamlessly bridge and swap thei
 
 ## First Use Case: Stablecoin Bridge
 
-![](imagess/Use_Case_A.png)
+![](images/Use_Case_A.png)
 
 The Jarvis protocol emits a type of stablecoin (for example a jEuro) on several blockchains. 
 Step 1: In order for a user to bridge their jEuro stablecoin jEuro to another blockchain, they lock some in the blockchain A. 
@@ -28,7 +28,7 @@ Step 4: With the authentication received by the transaction from the PoliBridge 
 
 ## Second Use Case: Cross-Chain Swapping
 
-![](imagess/Use_Case_B.png)
+![](images/Use_Case_B.png)
 
 If the user wants now to swap jEuro in blockchain A directly to another type of jFiat existing in Blockchain B, they will be able to do it. The process is the same as a simple bridge except there is an intermediate transaction between the SC B and the user, which consists of swapping the token x to the token y in calling an existing pool on blockchain B.
 
