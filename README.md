@@ -58,9 +58,9 @@ With Fleek and IPFS, we allow decentralized execution and storage of our code so
 
 By putting a small fee for the use of our bridge (which already reduces fees for people who want to bridge those tokens that are currently not supported by any bridge), we can generate revenue. That revenue is sustainable as we are going to be used by:
 
-    -already existing non-dollar-based stablecoins private holders
-    -arbitrators that are going to benefit from our reduced fees
-    -institutions that needs to use non-dollar based stablecoins
+- already existing non-dollar-based stablecoins private holders
+- arbitrators that are going to benefit from our reduced fees
+- institutions that needs to use non-dollar based stablecoins
 
 #### V. Next Steps & Roadmap
 
