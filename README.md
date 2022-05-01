@@ -39,14 +39,14 @@ Step 4: With the authentication received by the transaction from the PoliBridge 
 If the user wants now to swap jEuro in blockchain A directly to another type of jFiat existing in Blockchain B, they will be able to do it. The process is the same as a simple bridge except there is an intermediate transaction between the SC B and the user, which consists of swapping the token x to the token y in calling an existing pool on blockchain B.
 
 
-III.Benefits
+#### III.Benefits
 
 Unlocking the bridge and the seamless flow for non-dollar based stablecoins opens important economic opportunities:
 -Reducing fees: Currently to bridge a significant list of non-dollar based stablecoins, users need to swap them to dollar based stablecoins, bridge them, and swap them again on the arrival blockchain. By allowing direct bridges, we reduce the fees concerning the use of those non-dollar based. 
 -Harmonized price: We also allow for more arbitrage opportunities between the difference of price of those tokens in different blockchains, which results in a more harmonized price of those assets through all the blockchains.
 -Increase attractivity and use of non-dollar based stablecoins: By developing the economic ecosystem of non-dollar based stablecoins, we increase their attractivity and reduce their dependency to dollar-based stablecoins.
 
-IV. Security
+#### IV. Security
 
 We tackle the security requirements by hosting our PoliBridge app onto Fleek, which uses the IPFS technology. 
 Transparency
@@ -54,7 +54,7 @@ By using Fleek, we allow for anyone to see the code executed by our backend app 
 Decentralization of Execution and Storage
 With Fleek and IPFS, we allow decentralized execution and storage of our code so that our dApp is censorship-resistant and guarantees its execution.
 
-VI. Financial Rentability
+#### VI. Financial Rentability
 
 By putting a small fee for the use of our bridge (which already reduces fees for people who want to bridge those tokens that are currently not supported by any bridge), we can generate revenue. That revenue is sustainable as we are going to be used by:
 
@@ -62,7 +62,7 @@ By putting a small fee for the use of our bridge (which already reduces fees for
     -arbitrators that are going to benefit from our reduced fees
     -institutions that needs to use non-dollar based stablecoins
 
-V. Next Steps & Roadmap
+#### V. Next Steps & Roadmap
 
 Adding new use case: Cross-Chain Payment
 In the two use cases presented above, the address of the user in the blockchain A and the blockchain B is the same. It is easily possible to set a recipient address when interacting with the PoliBridge app, so that the token sent on blockchain B arrives at the recipient address. That functionality would unlock cross-payment system
