@@ -4,6 +4,10 @@
 # PoliBridge
 ## A Cross-chain Bridge & Swapper
 
+### Our side quests:
+- Starton
+- Protocol Labs
+
 ### StableCoin Today’s Ecosystem
 
 Currently, dollar-based stablecoins are quite well developed with the existence of bridges through most of the blockchains. But we noticed a lack of bridges for non-dollar stablecoins, jFiat for exemples. Our idea is to answer that need in creating a Cross-Chain bridge with Swapping capabilities, using Starton Notify and Fleek technologies.
