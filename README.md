@@ -28,7 +28,7 @@ Step 4: With the authentication received by the transaction from the PoliBridge 
 
 ## Second Use Case: Cross-Chain Swapping
 
-![](images/Use_Case_B.png)
+![](images/Use_case_B.png)
 
 If the user wants now to swap jEuro in blockchain A directly to another type of jFiat existing in Blockchain B, they will be able to do it. The process is the same as a simple bridge except there is an intermediate transaction between the SC B and the user, which consists of swapping the token x to the token y in calling an existing pool on blockchain B.
 
