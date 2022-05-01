@@ -1,14 +1,14 @@
-PoliBridge
-A Cross-chain Bridge & Swapper
+# PoliBridge
+## A Cross-chain Bridge & Swapper
 
-StableCoin Today’s Ecosystem
+### StableCoin Today’s Ecosystem
 
     Currently, dollar-based stablecoins are quite well developed with the existence of bridges through most of the blockchains. But we noticed a lack of bridges for non-dollar stablecoins, jFiat for exemples. Our idea is to answer that need in creating a Cross-Chain bridge with Swapping capabilities, using Starton Notify and Fleek technologies.
 
-I.Starton Notify functionality
+#### I.Starton Notify functionality
     Starton provides an API-platform to connect any application to blockchains. Inside the Starton Notify module, the Starton Watcher object of type “ERC20 Transfer'' informs us when a specific address is involved in a transfer of ERC20 on an EVM blockchain. This application supports  Ethereum, Avalanche, BSC, and Polygon. We decided to use this functionality to establish a verified communication system between blockchains.
 
-II. PoliBridge
+#### II. PoliBridge
 
     The aim of our dApp is to allow jFiat holders to seamlessly bridge and swap their tokens from one chain to another. 
 
@@ -16,7 +16,7 @@ II. PoliBridge
 
 
 
-First Use Case: Stablecoin Bridge
+## First Use Case: Stablecoin Bridge
 
 
 The Jarvis protocol emits a type of stablecoin (for example a jEuro) on several blockchains. 
@@ -32,7 +32,7 @@ Step 4: With the authentication received by the transaction from the PoliBridge 
 
 
 
-Second Use Case: Cross-Chain Swapping
+## Second Use Case: Cross-Chain Swapping
 
 
 
