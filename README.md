@@ -36,9 +36,9 @@ If the user wants now to swap jEuro in blockchain A directly to another type of 
 #### III.Benefits
 
 Unlocking the bridge and the seamless flow for non-dollar based stablecoins opens important economic opportunities:
--Reducing fees: Currently to bridge a significant list of non-dollar based stablecoins, users need to swap them to dollar based stablecoins, bridge them, and swap them again on the arrival blockchain. By allowing direct bridges, we reduce the fees concerning the use of those non-dollar based. 
--Harmonized price: We also allow for more arbitrage opportunities between the difference of price of those tokens in different blockchains, which results in a more harmonized price of those assets through all the blockchains.
--Increase attractivity and use of non-dollar based stablecoins: By developing the economic ecosystem of non-dollar based stablecoins, we increase their attractivity and reduce their dependency to dollar-based stablecoins.
+- Reducing fees: Currently to bridge a significant list of non-dollar based stablecoins, users need to swap them to dollar based stablecoins, bridge them, and swap them again on the arrival blockchain. By allowing direct bridges, we reduce the fees concerning the use of those non-dollar based. 
+- Harmonized price: We also allow for more arbitrage opportunities between the difference of price of those tokens in different blockchains, which results in a more harmonized price of those assets through all the blockchains.
+- Increase attractivity and use of non-dollar based stablecoins: By developing the economic ecosystem of non-dollar based stablecoins, we increase their attractivity and reduce their dependency to dollar-based stablecoins.
 
 #### IV. Security
 
